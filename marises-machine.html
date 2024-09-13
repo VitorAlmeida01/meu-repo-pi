@@ -26,6 +26,10 @@
         <center>
                 <h1>HyperCalculator</h1>
                 <h2>Informe 4 números em bases diferentes, esses números serão somados e você deverá escolher qual será a base que aparecerá a resposta</h2>
+                <h1>Player 1</h1>
+                <input type="text" id="inpPlayer1"><br>
+                <h1>Player 2</h1>
+                <input type="text" id="inpPlayer2">
                 <div id="teste" style="display: flex; align-items: center; justify-content: center;" >
                         <h3 class="basesh3">Decimal</h3>
                         <input id="ipt_decimal" type="text"  placeholder="Digite o valor em decimal">
@@ -36,31 +40,24 @@
                         <h3 class="basesh3">Binario</h3>
                         <input id="ipt_binario" type="text" placeholder="Digite o valor em binario">
                 </div>
-                <h3>converter para:</h3>
-                <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
-                <br>
-                <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;"
-                        id="demo2"></div>
+                <b>Digite o resultado em decimal (Player 1)</b><br>
+                <input type="number"><br><br>
+                <b>Digite o resultado em decimal (Player 2)</b><br>
+                <input type="number">
                 <br><br>
-                <input onclick="aparecer_hexa()" type="checkbox"><b>Hexadecimal</b>
-                <br>
-                <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(7, 7, 7); width: 15%; height: 40px; font-weight: 500;"
-                        id="demo3"></div>
-                <br><br> 
-                <input onclick="aparecer_bin()" type="checkbox"><b>Binário</b>
-                <br>
-                <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(5, 5, 5); width: 60%; height: 50px; font-weight: 500;"
-                        id="demo4"></div>
-                <br><br>
-                <button onclick="converter()">Converter</button>
+                
+                <button onclick="verificar()">Verificar</button>
         </center>
 
 
-
+1
 
         <script>
 
-                function converter() {  
+
+                function verificar() {  
+                        var player1 = inpPlayer1.value
+                         var  player2 = inpPlayer2.value
                         var decimal = 0;
                         var octal = 0;
                         var hexa = 0;
@@ -83,22 +80,12 @@
                         console.log(binario);
                         console.log(soma);
                         document.getElementById("demo2").innerHTML = ` ${octal}`;
-                        document.getElementById("demo3").innerHTML = ` ${hexa}`;
-                        document.getElementById("demo4").innerHTML = ` ${binario}`;
 
 
 
                 }
 
-                function aparecer_bin() {
-                        demo4.style.display = 'block'
-                }
-
-                function aparecer_hexa() {
-                        demo3.style.display = 'block'
-                }
-
-                function aparecer_octal() {
+                function aparecer_Resultado()   {
                         demo2.style.display = 'block'
                 }
                 document.bgColor = "#00ffff";
