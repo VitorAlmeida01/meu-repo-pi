@@ -14,6 +14,7 @@
         }
         body{
                 background-image: url(image/backgroundimage.jpg);
+
                 background-size: 100%;
                 color: white;
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -24,16 +25,16 @@
 
         <center>
                 <h1>HyperCalculator</h1>
-                <br><br>
+                <h2>Informe 4 números em bases diferentes, esses números serão somados e você deverá escolher qual será a base que aparecerá a resposta</h2>
                 <div id="teste" style="display: flex; align-items: center; justify-content: center;" >
                         <h3 class="basesh3">Decimal</h3>
                         <input id="ipt_decimal" type="text"  placeholder="Digite o valor em decimal">
                         <h3 class="basesh3">Octal</h3>
-                        <input id="ipt_octal" type="text" placeholder="Digite o valor em decimal">
+                        <input id="ipt_octal" type="text" placeholder="Digite o valor em octal">
                         <h3 class="basesh3">Hexadecimal</h3>
-                        <input id="ipt_hexa" type="text" placeholder="Digite o valor em decimal">
+                        <input id="ipt_hexa" type="text" placeholder="Digite o valor em hexadecimal">
                         <h3 class="basesh3">Binario</h3>
-                        <input id="ipt_binario" type="text" placeholder="Digite o valor em decimal">
+                        <input id="ipt_binario" type="text" placeholder="Digite o valor em binario">
                 </div>
                 <h3>converter para:</h3>
                 <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
@@ -59,28 +60,31 @@
 
         <script>
 
-                function converter() {
+                function converter() {  
+                        var decimal = 0;
+                        var octal = 0;
+                        var hexa = 0;
+                        var binario = 0;
 
-                        var decimal = Number(ipt_decimal.value);
-                        var octal = Number(ipt_decimal.value);
-                        var hexa = Number(ipt_decimal.value);
-                        var decimal = Number(ipt_decimal.value);
+                        decimal = Number(ipt_decimal.value);
+                        octal = Number(ipt_octal.value);
+                        hexa = ipt_hexa.value;
+                        binario = Number(ipt_binario.value);
 
-                        let octal = decimal.toString(8);
+                        let octalparadecimal = Number(octal.toString(10));
+                        let hexadecimalparadecimal = Number(hexa.toString(10));
+                        let binariaparadecimal = Number(binario.toString(10));
 
-                        let hexadecimal = decimal.toString(16);
-
-                        let binaria = decimal.toString(2);
+                        let soma = decimal + octalparadecimal + hexadecimalparadecimal + binariaparadecimal;
 
                         console.log(decimal);
                         console.log(octal);
-                        console.log(hexadecimal);
-                        console.log(binaria);
-
-                        document.getElementById("demo1").innerHTML = ` ${decimal}`;
+                        console.log(hexa);
+                        console.log(binario);
+                        console.log(soma);
                         document.getElementById("demo2").innerHTML = ` ${octal}`;
-                        document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
-                        document.getElementById("demo4").innerHTML = ` ${binaria}`;
+                        document.getElementById("demo3").innerHTML = ` ${hexa}`;
+                        document.getElementById("demo4").innerHTML = ` ${binario}`;
 
 
 
